@@ -23,10 +23,10 @@ This project is meant to describe the approach a developer would take in impleme
 
 ### Build
 The Java project can be compiled by running
-````
+```
 mvn clean install
 ```
-(given that you have maven installed and it is on your PATH)
+(given that you have maven installed and it is on your **PATH**)
 
 The Solidity contracts can be compiled using your favorite Solidity compiler and should be deployed to the Ethereum network.
 
@@ -34,13 +34,13 @@ Note that the ```TestContract``` requires the deployed address of the ```PSOracl
 
 I personally use [Truffle](http://truffleframework.com/ "Truffle") for managing and deploying the contracts. The following deployment script comes in handy when deploying contracts that depend on another contracts address:
 
-```
-  deployer.deploy(PSOraclize).then(function() {
-    var oraclize = PSOraclize.deployed().then(function (instance) {
-      console.log("Oraclize is deployed at: " + instance.address);
-      deployer.deploy(TestContract, instance.address);
-    });
+```js
+deployer.deploy(PSOraclize).then(function() {
+  var oraclize = PSOraclize.deployed().then(function (instance) {
+    console.log("Oraclize is deployed at: " + instance.address);
+    deployer.deploy(TestContract, instance.address);
   });
+});
 ```
 
 ### Usage
