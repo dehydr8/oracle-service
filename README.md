@@ -45,9 +45,9 @@ deployer.deploy(PSOraclize).then(function() {
 
 ### Usage
 ```
-java -jar oraclize-[version].jar [RPC-URL] [CALLBACK-PRIVATE-KEY] [ORACLZE-CONTRACT-ADDRESS]
+mvn exec:java -Dexec.args "[RPC-URL] [CALLBACK-PRIVATE-KEY] [ORACLZE-CONTRACT-ADDRESS]"
 
-java -jar oraclize-[version].jar http://localhost:8545/ 80c2e663c2e55f795b0054c636042257277409a66bf043d9817cc1fa0639694d 0xf74cd4f8fea7c9cd6224747950c75f2a2cd36761
+mvn exec:java -Dexec.args "http://localhost:8545/ 80c2e663c2e55f795b0054c636042257277409a66bf043d9817cc1fa0639694d 0xf74cd4f8fea7c9cd6224747950c75f2a2cd36761"
 ```
 1. ```RPC-URL``` - URL of the RPC endpoint
 2. ```CALLBACK-PRIVATE-KEY``` - Private key of the callback account
